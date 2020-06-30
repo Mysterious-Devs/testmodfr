@@ -1,0 +1,35 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[32,)"
+
+issueTrackerURL="http://my.issue.tracker/" #optional
+
+[[mods]]
+
+modId="testmodfr"
+
+version="0.0.1"
+
+displayName="Test Mod Fr"
+
+displayURL="https://github.com/Mysterious-Devs/testmodfr"
+
+authors="Mysterious_Dev"
+
+description='''
+Test Mod to show the possibility of Minecraft Forge 1.16
+'''
+
+[[dependencies.testmodfr]]
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[32,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.testmodfr]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.1]"
+    ordering="NONE"
+    side="BOTH"
