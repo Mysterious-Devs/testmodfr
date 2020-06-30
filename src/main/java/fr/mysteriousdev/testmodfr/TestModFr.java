@@ -2,6 +2,10 @@ package fr.mysteriousdev.testmodfr;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,11 +22,24 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-@Mod("testmodfr")
+@Mod(TestModFr.MODID)
 public class TestModFr
 {
 
+    public static final String MODID = "testmodfr";
+
     private static final Logger LOGGER = LogManager.getLogger();
+
+    public static final ItemGroup TEST_GROUP = new ItemGroup("test_tab") {
+
+        @OnlyIn(Dist.CLIENT)
+        @Override
+        public ItemStack createIcon() {
+
+            return new ItemStack(Blocks.STONE);
+
+        }
+    };
 
     public TestModFr() {
 
