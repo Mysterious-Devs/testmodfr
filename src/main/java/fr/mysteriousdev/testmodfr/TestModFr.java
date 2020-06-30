@@ -1,5 +1,7 @@
 package fr.mysteriousdev.testmodfr;
 
+import fr.mysteriousdev.testmodfr.init.BlockInit;
+import fr.mysteriousdev.testmodfr.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -8,6 +10,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -51,6 +54,10 @@ public class TestModFr
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ItemInit.ITEMS.register(bus);
+        BlockInit.BLOCKS.register(bus);
+        BlockInit.ITEM_BLOCK.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
