@@ -11,7 +11,7 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TestModFr.MODID);
 
-    public static final RegistryObject<Item> SIMPLE_ITEM = ITEMS.register("simple_item", () -> new Item((new Item.Properties()).group(ItemGroup.MATERIALS).maxStackSize(16)));
+    public static final RegistryObject<Item> SIMPLE_ITEM = ITEMS.register("simple_item", () -> new Item((new Item.Properties()).group(TestModFr.TEST_GROUP).maxStackSize(16)));
 
 
 }
