@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "testmodfr:item/ender_mask"
+  },
+  "display": {
+    "head": {
+      "translation": [0, 0, -6.5]
+    }
+  }
+}
